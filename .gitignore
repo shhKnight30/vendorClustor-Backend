@@ -8,7 +8,7 @@ docs/
 # server.js
 .gitignore
 # admin.js
-notifications.js
+# notifications.js
 # orders.js
 # payments.js
 # products.js
