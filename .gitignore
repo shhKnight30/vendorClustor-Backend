@@ -7,7 +7,7 @@ docs/
 # scripts/
 # server.js
 .gitignore
-admin.js
+# admin.js
 notifications.js
 orders.js
 payments.js
