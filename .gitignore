@@ -4,6 +4,6 @@ config/
 docs/
 middlewares/
 routes/
-scripts/
+# scripts/
 server.js
 .gitignore
