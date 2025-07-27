@@ -9,7 +9,7 @@ docs/
 .gitignore
 # admin.js
 notifications.js
-orders.js
+# orders.js
 payments.js
 # products.js
 # vendors.js
