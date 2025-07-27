@@ -11,5 +11,5 @@ docs/
 notifications.js
 orders.js
 payments.js
-products.js
+# products.js
 # vendors.js
