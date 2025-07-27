@@ -10,6 +10,6 @@ docs/
 # admin.js
 notifications.js
 # orders.js
-payments.js
+# payments.js
 # products.js
 # vendors.js
