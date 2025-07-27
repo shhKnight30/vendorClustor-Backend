@@ -1,0 +1,156 @@
+openapi: 3.0.3
+info:
+  title: Street Vendor Supply Management API
+  description: API documentation for smart delivery and inventory management for street vendors.
+  version: 1.0.0
+
+servers:
+  - url: http://localhost:5000
+    description: Local development server
+
+paths:
+  /vendors:
+    get:
+      summary: Get all vendors
+      tags: [Vendor]
+      responses:
+        '200':
+          description: List of vendors
+
+  /vendor/register:
+    post:
+      summary: Register a new vendor
+      tags: [Vendor]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Vendor'
+      responses:
+        '201':
+          description: Vendor registered
+
+  /products:
+    get:
+      summary: Get all products
+      tags: [Product]
+      responses:
+        '200':
+          description: List of products
+
+  /vendor/daily-needs:
+    post:
+      summary: Set daily needs for vendor
+      tags: [DailyNeeds]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DailyNeedInput'
+      responses:
+        '200':
+          description: Daily needs updated
+
+  /vendor/extra-orders:
+    post:
+      summary: Add an extra order
+      tags: [ExtraOrder]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ExtraOrder'
+      responses:
+        '201':
+          description: Extra order added
+
+  /vendor/notifications:
+    get:
+      summary: Get vendor notifications
+      tags: [Notification]
+      responses:
+        '200':
+          description: List of notifications
+
+  /admin/send:
+    post:
+      summary: Send notification to a vendor
+      tags: [Notification]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Notification'
+      responses:
+        '200':
+          description: Notification sent
+
+components:
+  schemas:
+    Vendor:
+      type: object
+      properties:
+        name:
+          type: string
+        phone:
+          type: string
+        email:
+          type: string
+        address:
+          type: string
+        city:
+          type: string
+        state:
+          type: string
+        pincode:
+          type: string
+        vendor_type:
+          type: string
+        language:
+          type: string
+
+    DailyNeedInput:
+      type: object
+      properties:
+        vendor_id:
+          type: integer
+        items:
+          type: array
+          items:
+            type: object
+            properties:
+              product_id:
+                type: integer
+              quantity:
+                type: number
+
+    ExtraOrder:
+      type: object
+      properties:
+        vendor_id:
+          type: integer
+        product_id:
+          type: integer
+        quantity:
+          type: number
+        order_date:
+          type: string
+          format: date
+
+    Notification:
+      type: object
+      properties:
+        vendor_id:
+          type: integer
+        title:
+          type: string
+        message:
+          type: string
+        type:
+          type: string
+        sent_via:
+          type: string
