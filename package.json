@@ -1,7 +1,7 @@
 {
-  "name": "vendor-cursor-backend",
+  "name": "vendor-cluster-backend",
   "version": "1.0.0",
-  "description": "Backend API for VendorCursor - Street Food Vendor Supply Chain Management",
+  "description": "Backend API for VendorCluster - Street Food Vendor Supply Chain Management",
   "type": "module",
   "main": "server.js",
   "scripts": {
