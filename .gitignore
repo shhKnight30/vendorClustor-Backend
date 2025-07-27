@@ -2,8 +2,14 @@
 node_modules/
 config/
 docs/
-middlewares/
-routes/
+# middlewares/
+# routes/
 # scripts/
-server.js
+# server.js
 .gitignore
+admin.js
+notifications.js
+orders.js
+payments.js
+products.js
+vendors.js
